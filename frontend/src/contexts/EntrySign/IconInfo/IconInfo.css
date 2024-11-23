@@ -1,0 +1,53 @@
+.facts {
+  display: flex;
+  flex-direction: column;
+  width: 80px; /* Include units for proper width */
+}
+
+.handshape-image {
+  max-width: 60px;
+  height: 60px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff; /* Added a background color for better visibility */
+  color: white; /* Set the color of the text to white for contrast */
+  font-weight: bold;
+  font-size: 16px; /* Match the placeholder font size */
+}
+
+.handshape-placeholder {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #777;
+  font-size: 16px;
+  text-align: center;
+}
+
+.article-count {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #007bff; /* Blue background to ensure it looks like an icon */
+  color: white; /* White text to ensure readability */
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+}
+
+.no-articles {
+  font-size: 14px;
+}

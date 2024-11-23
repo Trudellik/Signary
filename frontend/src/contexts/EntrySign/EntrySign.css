@@ -1,0 +1,6 @@
+.description {
+  padding-left: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
