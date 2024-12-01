@@ -2,16 +2,14 @@ import React from 'react';
 import './IconInfo.css';
 
 interface ArticleCountIconProps {
-  articles: string[];
+  count: number;
 }
 
-const ArticleCountIcon: React.FC<ArticleCountIconProps> = ({ articles }) => {
-  const articleCount = articles.length;
-
+const ArticleCountIcon: React.FC<ArticleCountIconProps> = ({ count }) => {
   return (
     <div className="facts">
-      {articleCount > 0 ? (
-        <div className="article-count">{articleCount}</div>
+      {count > 0 ? (
+        <div className="article-count">{count}</div>
       ) : (
         <div className="article-count no-articles">No Articles</div>
       )}

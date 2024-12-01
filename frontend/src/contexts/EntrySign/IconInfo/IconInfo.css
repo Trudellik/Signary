@@ -1,7 +1,6 @@
 .facts {
   display: flex;
   flex-direction: column;
-  width: 80px; /* Include units for proper width */
 }
 
 .handshape-image {

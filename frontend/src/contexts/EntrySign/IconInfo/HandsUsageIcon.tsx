@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './IconInfo.css';
+import { HandsUsageTypes } from '../../../models/Types';
 
 interface HandsUsageProps {
-  handsUsage: 'super-sub' | 'mirror' | 'async' | 'solo';
+  handsUsage: HandsUsageTypes;
 }
 
 const HandsUsageIcon = ({ handsUsage }: HandsUsageProps) => {

@@ -1,0 +1,7 @@
+.entry {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 8px;
+  width: min-content;
+  background-color: blue;
+}

@@ -1,0 +1,32 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  width: 100%;
+  max-width: 1080px;
+}
+
+.grid-item {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.searchbar {
+  grid-column: span 2;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.sign-list {
+  grid-column: span 1;
+}

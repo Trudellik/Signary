@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './IconInfo.css';
+import { HandshapeTypes } from '../../../models/Types';
 
 interface HandshapeIconProps {
-  handshape: string;
+  handshape: HandshapeTypes;
 }
 
 const HandshapeIcon = ({ handshape }: HandshapeIconProps) => {

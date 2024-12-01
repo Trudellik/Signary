@@ -2,7 +2,11 @@ import React from 'react';
 
 import signExprVideo from '../../assets/signExpr.mp3';
 
-const EntrySignVideo = () => {
+interface EntrySignVideoProps {
+  videoUrl: string;
+}
+
+const EntrySignVideo = ({ videoUrl }: EntrySignVideoProps) => {
   return (
     <div>
       <video width="400" controls>
