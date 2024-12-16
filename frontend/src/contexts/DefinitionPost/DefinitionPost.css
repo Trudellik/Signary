@@ -1,0 +1,7 @@
+.mouthing-list {
+    display: flex;
+}
+
+.mouthing-item {
+    margin-right: 8px;
+}

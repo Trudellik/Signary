@@ -4,6 +4,7 @@ import { mockSigns } from '../../assets/mockData';
 import { Sign } from '../../models/SignModel';
 import Searchbar from '../../contexts/Searchbar';
 import './Home.css';
+import DefinitionPost from '../../contexts/DefinitionPost';
 
 const Home = () => {
   const [filters, setFilters] = useState({
@@ -36,10 +37,13 @@ const Home = () => {
         <div className="grid-item searchbar">
           <Searchbar onFilterChange={handleFilterChange} />
         </div>
-        <div className="grid-item sign-list">
+        <div className="grid-item sign-list" style={{backgroundColor:"green"}}>
           {filteredSigns.map((sign) => (
             <SignDisplay key={sign.id} sign={sign} />
           ))}
+        </div>
+        <div className="grid-item sign-list" style={{backgroundColor:"red"}}>
+          <DefinitionPost />
         </div>
       </div>
     </div>

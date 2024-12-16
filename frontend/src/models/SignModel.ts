@@ -29,3 +29,8 @@ export interface MouthingDefiniton {
   mouthingType: MouthingTypes;
   mouthingExpression: string;
 }
+
+export interface Tag {
+  title: string;
+  description: string;
+}
