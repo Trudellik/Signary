@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import NotFound from './components/NotFound';
+import EntrySignForm from './components/EntrySignForm';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <main className="main">
         <Routes>
           <Route index element={<Home />} />
+          <Route path='signform' element={<EntrySignForm />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

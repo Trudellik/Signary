@@ -17,7 +17,7 @@ interface Filters {
   mouthing: string;
 }
 
-const Searchbar: React.FC<SearchbarProps> = ({ onFilterChange }) => {
+const Searchbar = ({ onFilterChange }: SearchbarProps) => {
   const [filters, setFilters] = useState<Filters>({
     handshape: '',
     handsusage: '',
@@ -54,6 +54,9 @@ const Searchbar: React.FC<SearchbarProps> = ({ onFilterChange }) => {
           onChange={handleSelectChange('mouthing')}
         />
       </div>
+      Direction
+      Repeat type
+      Movement
     </div>
   );
 };
