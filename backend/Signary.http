@@ -1,0 +1,6 @@
+@Signary_HostAddress = http://localhost:5249
+
+GET {{Signary_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
