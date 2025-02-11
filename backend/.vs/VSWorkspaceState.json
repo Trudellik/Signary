@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\API"
   ],
-  "SelectedNode": "\\Signary.sln",
+  "SelectedNode": "\\API\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

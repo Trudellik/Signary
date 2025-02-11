@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Signary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10cc6178862911a2c42a395f2b475ce49dfc8dca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c630f584bb2cae860df7dce55667f397a5dd6a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Signary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Signary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

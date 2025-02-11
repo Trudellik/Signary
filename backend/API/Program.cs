@@ -1,10 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using Signary.Infrastructure.Persistence;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddJsonFile("API/appsettings.json", optional: false, reloadOnChange: true);
 
-// Add services to the container.
+var services = builder.Services;
 
-builder.Services.AddControllers();
+services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+services.AddOpenApi();
 
 var app = builder.Build();
 
