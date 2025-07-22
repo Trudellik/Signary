@@ -10,6 +10,4 @@ namespace Signary.Domain.Entities
 
         public ICollection<SignDefinition> Definitions { get; set; } = new List<SignDefinition>();
     }
-
-
 }

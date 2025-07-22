@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { Typography } from 'antd';
+import {
+  SmileOutlined,
+  HomeOutlined,
+  SettingOutlined,
+} from '@ant-design/icons';
 import './Searchbar.css';
 import HandshapeSelect from './Selects/HandshapeSelect';
 import HandsUsageSelect from './Selects/HandsUsageSelect';
 import MouthingSelect from './Selects/MouthingSelect';
+import IconSelect from '../../styles/IconSelect';
 
 const { Title } = Typography;
 
@@ -54,9 +60,16 @@ const Searchbar = ({ onFilterChange }: SearchbarProps) => {
           onChange={handleSelectChange('mouthing')}
         />
       </div>
-      Direction
-      Repeat type
-      Movement
+      <IconSelect
+        options={[
+          { key: 'smile', icon: <SmileOutlined /> },
+          { key: 'home', icon: <HomeOutlined /> },
+          { key: 'settings', icon: <SettingOutlined /> },
+        ]}
+        selected={undefined}
+        onSelect={() => {}}
+      />
+      Direction Repeat type Movement
     </div>
   );
 };

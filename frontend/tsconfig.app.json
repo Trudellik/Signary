@@ -22,7 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"],
+  "include": ["src", "vite-env.d.ts"],
   "types": ["node"],
   "typeRoots": ["../node_modules/@types"]
 }

@@ -17,7 +17,7 @@ namespace Signary.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.0")
+                .HasAnnotation("ProductVersion", "9.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -34,7 +34,7 @@ namespace Signary.Migrations
 
                     b.HasIndex("TagId");
 
-                    b.ToTable("SignDefinitionTag");
+                    b.ToTable("SignDefinitionTags", (string)null);
                 });
 
             modelBuilder.Entity("Signary.Domain.Entities.MouthingOption", b =>
@@ -68,7 +68,8 @@ namespace Signary.Migrations
 
                     b.Property<string>("VideoUrl")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
 
                     b.HasKey("Id");
 
@@ -128,6 +129,9 @@ namespace Signary.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Tags");
                 });

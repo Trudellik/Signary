@@ -13,16 +13,21 @@ public class ContentController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetSignExpression(Guid id)
+    internal static object GetSignExpression()
     {
-        var signExpression = await _mediator.Send(new GetSignExpressionById { Id = id });
-
-        if (signExpression == null)
-            return NotFound(new { message = "Sign Expression not found" });
-
-        return Ok(signExpression);
+        throw new NotImplementedException();
     }
+
+    //[HttpGet("{id}")]
+    //public async Task<IActionResult> GetSignExpression(Guid id)
+    //{
+    //    var signExpression = await _mediator.Send(new GetSignExpressionById { Id = id });
+
+    //    if (signExpression == null)
+    //        return NotFound(new { message = "Sign Expression not found" });
+
+    //    return Ok(signExpression);
+    //}
 
     [HttpGet]
     public async Task<IActionResult> GetAllSignExpressions()

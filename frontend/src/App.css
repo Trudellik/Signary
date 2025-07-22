@@ -1,5 +1,5 @@
 .App {
-  font-family: sans-serif;
+  font-family: inherit;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,17 +11,22 @@ footer {
   width: 100%;
 }
 
+:root {
+  --max-width: 75rem;
+  --padding-horizontal: 1.25rem;
+}
+
 .main {
   display: flex;
   width: 100%;
-  max-width: 1200px; /* Updated max width to a more common size */
-  padding: 0 20px; /* Add some padding for better spacing */
-  box-sizing: border-box; /* Ensure padding is included in width calculations */
+  max-width: var(--max-width);
+  padding: 0 var(--padding-horizontal);
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .main {
     max-width: 100%;
-    padding: 0 10px; /* Reduce padding for smaller screens */
+    padding: 0 0.625rem;
   }
 }

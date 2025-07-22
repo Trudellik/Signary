@@ -1,11 +1,18 @@
 import React from 'react';
 import './Header.css';
-import { Button } from 'antd';
+import { Button, Typography } from 'antd';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+const { Title } = Typography;
+
+const Header: React.FC = () => {
   return (
     <header className="header">
-      <div>Header</div>
+      <Link to="/" className="header-logo">
+        <Title level={3} style={{ margin: 0, color: 'white' }}>
+          {import.meta.env.VITE_APP_NAME}
+        </Title>
+      </Link>
       <Button type="primary">Primary</Button>
     </header>
   );

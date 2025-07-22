@@ -1,14 +1,13 @@
 ﻿using MediatR;
-using Signary.Application.DTOs;
 using AutoMapper;
 using Signary.Application.Queries;
 
-public class GetAllSignExpressionsQueryHandler : IRequestHandler<GetAllSignExpressions, List<SignExpressionDto>>
+public class GetAllSignExpressionsHandler : IRequestHandler<GetAllSignExpressions, List<SignExpressionDto>>
 {
     private readonly ISignExpressionRepository _repository;
     private readonly IMapper _mapper;
 
-    public GetAllSignExpressionsQueryHandler(ISignExpressionRepository repository, IMapper mapper)
+    public GetAllSignExpressionsHandler(ISignExpressionRepository repository, IMapper mapper)
     {
         _repository = repository;
         _mapper = mapper;

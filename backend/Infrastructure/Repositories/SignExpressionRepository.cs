@@ -1,6 +1,5 @@
 using Signary.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Signary.Infrastructure.Persistence;
 
@@ -22,14 +21,16 @@ public class SignExpressionRepository : ISignExpressionRepository
     {
         return await _context.SignExpressions
             .Include(se => se.Definitions)
-                .ThenInclude(sd => sd.Mouthings)
-            .Include(se => se.Definitions)
-                .ThenInclude(sd => sd.Tags)
             .ToListAsync();
     }
 
     public Task<SignExpression?> GetByIdAsync(Guid id)
     {
         throw new NotImplementedException();
+    }
+
+    public async Task SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        await _context.SaveChangesAsync(cancellationToken);
     }
 }

@@ -1,13 +1,11 @@
 ﻿using FluentValidation;
-using Signary.Infrastructure.Persistence;
+using Signary.Application.Commands;
 
-namespace Signary.Application.Commands.CreateSignExpression
+namespace Signary.Application.Validators
 {
     public class CreateSignExpressionValidator : AbstractValidator<CreateSignExpression>
     {
-        private readonly IApplicationDbContext _context;
-
-        public CreateSignExpressionValidator(IApplicationDbContext context)
+        public CreateSignExpressionValidator()
         {
             RuleFor(x => x.VideoUrl)
                 .NotEmpty().WithMessage("Video URL is required")

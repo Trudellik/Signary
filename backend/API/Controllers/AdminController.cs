@@ -1,13 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
-using Signary.Domain.Entities;
-using Signary.Application.Commands.CreateSignExpression;
+using Signary.Application.Commands;
 
 [ApiController]
-[Route("api/admin/sign-expressions")]
+[Route("api/admin")]
 [Authorize(Roles = "Admin")]
 public class AdminController : ControllerBase
 {
@@ -18,38 +15,43 @@ public class AdminController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpPost]
+    [HttpPost("sign-expressions")]
     public async Task<IActionResult> CreateSignExpression([FromBody] CreateSignExpression command)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+        
         var signExpressionId = await _mediator.Send(command);
-        return CreatedAtAction(nameof(GetSignExpression), new { id = signExpressionId }, null);
+        return CreatedAtAction(nameof(ContentController.GetSignExpression), "Content", new { id = signExpressionId }, null);
     }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateSignExpression(Guid id, [FromBody] UpdateSignExpression command)
-    {
-        if (id != command.Id)
-            return BadRequest("Mismatched SignExpression ID");
+    //[HttpPut("{id}")]
+    //public async Task<IActionResult> UpdateSignExpression(Guid id, [FromBody] UpdateSignExpression command)
+    //{
+    //    if (id != command.Id)
+    //        return BadRequest("Mismatched SignExpression ID");
 
-        var updatedSignExpression = await _mediator.Send(command);
-        return updatedSignExpression != null ? Ok(updatedSignExpression) : NotFound();
-    }
+    //    var updatedSignExpression = await _mediator.Send(command);
+    //    return updatedSignExpression != null ? Ok(updatedSignExpression) : NotFound();
+    //}
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteSignExpression(Guid id)
-    {
-        var result = await _mediator.Send(new DeleteSignExpression { Id = id });
-        return result ? NoContent() : NotFound();
-    }
+    //[HttpDelete("{id}")]
+    //public async Task<IActionResult> DeleteSignExpression(Guid id)
+    //{
+    //    var result = await _mediator.Send(new DeleteSignExpression { Id = id });
+    //    return result ? NoContent() : NotFound();
+    //}
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetSignExpression(Guid id)
-    {
-        var signExpression = await _mediator.Send(new GetSignExpressionQuery { Id = id });
+    //[HttpGet("{id}")]
+    //public async Task<IActionResult> GetSignExpression(Guid id)
+    //{
+    //    var signExpression = await _mediator.Send(new GetSignExpressionQuery { Id = id });
 
-        if (signExpression == null)
-            return NotFound(new { message = "Sign Expression not found" });
+    //    if (signExpression == null)
+    //        return NotFound(new { message = "Sign Expression not found" });
 
-        return Ok(signExpression);
-    }
+    //    return Ok(signExpression);
+    //}
 }

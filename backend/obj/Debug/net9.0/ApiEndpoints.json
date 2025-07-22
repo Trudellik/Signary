@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "ContainingType": "ContentController",
+    "Method": "GetAllSignExpressions",
+    "RelativePath": "api/sign-expressions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
